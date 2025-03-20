@@ -190,8 +190,10 @@ function App() {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <span className="navbar-brand">코리아종합물류 무신사 스탠다드 입고 관리 WMS</span>
-          <div className="navbar-nav ms-auto"></div>
+          <span className="navbar-brand px-5">코리아종합물류 KT_LOGIS</span>
+          <div className="navbar-nav ms-auto">
+            <span className="navbar-text text-white px-5">무신사 스탠다드 입고 관리</span>
+          </div>
         </div>
       </nav>
 
@@ -219,19 +221,19 @@ function App() {
           <>
             <div className="card mb-4">
               <div className="card-body">
-                <h5>바코드 스캔</h5>
-                <div className="row">
+                <h5>입고 예정 정보 통계</h5>
+                <div className="row justify-content-center">
                   <div className="col-6 col-md-3 mb-2">
-                    <p>전체 SKU 수량: {totalSkus}</p>
+                    <p>총 라인수수 : {totalSkus}</p>
                   </div>
                   <div className="col-6 col-md-3 mb-2">
-                    <p>전체 입고 예정 수량: {expectedTotal}</p>
+                    <p>총 예정 수량: {expectedTotal}</p>
                   </div>
                   <div className="col-6 col-md-3 mb-2">
-                    <p>전체 입고 수량: {actualTotal}</p>
+                    <p>실제 입고 수량: {actualTotal}</p>
                   </div>
                   <div className="col-6 col-md-3 mb-2">
-                    <p>완료율: {overallProgress.toFixed(1)}%</p>
+                    <p>입고 완료율: {overallProgress.toFixed(1)}%</p>
                   </div>
                 </div>
               </div>
@@ -239,9 +241,9 @@ function App() {
 
             <div className="card">
               <div className="card-body">
-                <h5>데이터 초기화</h5>
-                <p>모든 SKU 데이터 작업 이력을 삭제합니다. 이 작업은 되돌릴 수 없습니다.</p>
-                <div className="d-flex justify-content-between align-items-center">
+                <h5>DATA IN / OUT / RESET</h5>
+                <p>초기화시 되돌릴 수 없습니다. 주의해서 진행 해주세요.</p>
+                <div className="d-flex justify-content-center align-items-center gap-3">
                   <FileHandler
                     scannedData={scannedData}
                     onUpload={handleUpload}
@@ -251,7 +253,7 @@ function App() {
                     className="btn btn-danger"
                     onClick={handleResetConfirm}
                   >
-                    데이터 초기화
+                    RESET
                   </button>
                 </div>
 
